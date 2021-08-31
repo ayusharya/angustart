@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello-app';
+  constructor(){
+
+  }
+  execute(){
+    alert("HI");
+  }
+ //name="priya";
 }
