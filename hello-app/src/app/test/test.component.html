@@ -1,0 +1,59 @@
+<p>test works!</p>
+<div>Inline html and css in the component.ts file</div>
+  <h2>Welcome {{name}} in the world</h2><!-- printing dynamic values-->
+  <h1>{{5*2}}</h1> <!-- can perform expression-->
+  <h1> {{"Welcome" +name}}</h1><!-- can perform concatenation operations-->
+  <h1>{{name.length}}</h1><!-- can use javascript property/methods-->
+  <h1>{{name.toUpperCase()}}</h1>
+  <h1>{{Hellouser()}}</h1><!-- can call methods define in the component class-->
+  <!-- <h1>{{a= 2+2}}</h1> , this will through an error because the assignment not allowed-->
+  <!-- <h1>{{window.location.href}}</h1> , this will through an error because it is not aware of the global javascript variables.-->
+  <h1>{{urlname}}</h1>
+  <!-- Class Binding-->
+
+  <h1 class="text-success">Hi class binding</h1>
+  <h1 [class]="successtext">Hi class binding</h1>
+  <h1 [class.text-failure]="harmtext">Hi class binding</h1>
+  <h1 [ngClass]="messageclass">Hi class binding</h1>
+  <!-- Style Binding-->
+  <h1 [style.color]="'blue'">Started the style binding</h1>
+  <h1 [style.color]="harmtext ? 'red' : 'green'">CSS with conditions style binding</h1>
+  <h1 [style.color]="CSSproperty">Started the style binding</h1>
+  <h1 [ngStyle]="multiplestyles"> multiple style binding</h1>
+  <!-- Event Binding-->
+  <button (click)="onClick($event)"> Event binding </button>
+  <button (click)="eventproperty='ffffffsh'"> Click please</button>
+  {{eventproperty}}
+  <!-- Template Reference Variables-->
+  <input #inputvalue type="text">
+  <button (click)="namevalue(inputvalue.value)"> Enter your name</button><br>
+  <!-- Two ways binding-->
+  <input [(ngModel)]="name2way"  type="text">
+  {{name2way}}
+<!--ngIf Structural directives-->
+  <h2 *ngIf="ifvalue else elseblock">If Structural directives</h2>
+  <ng-template #elseblock>
+    <h2>else block value printed</h2>
+  </ng-template>
+   <!-- if else in separate tag-->
+  <div *ngIf="ifvalue; then ifblock; else elseblock1"></div>
+  <ng-template #ifblock>
+    <h2>if block value printed</h2>
+  </ng-template>
+  <ng-template #elseblock1>
+    <h2>else hidden</h2>
+  </ng-template>
+<!--ngSwitch Structural directives-->
+   <div [ngSwitch]="color">
+       <div *ngSwitchCase="'red'">Red area printed</div>
+       <div *ngSwitchCase="'blue'">blue area printed</div>
+       <div *ngSwitchCase="'green'">Green area printed</div>
+       <div *ngSwitchDefault>Default area printed</div>
+   </div>
+   <!--ngFor Structural directives-->
+   <div *ngFor="let color of colorfor ; index as i " [style.color]="'Red'">
+      ngfor {{i}} {{color}}
+   </div>
+
+   <div>{{"Hello " + parentData}}</div>
+   <button (click)="fireEvent()">Send Event</button>

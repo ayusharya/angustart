@@ -9,3 +9,9 @@ Name: <input [(ngModel)]="title" type="text"  placeholder=" Enter name" >
 <h1>{{title}}</h1>
 <!-- property binding -->
 <h2 [innerHtml]="title"></h2>
+
+<div app-test (childEvent)="message=$event" [parentData]="name1"></div> <!-- <div class="app-test"></div>, <app-test></app-test> -->
+{{message}}
+<app-employee-list></app-employee-list>
+
+<app-employee-details></app-employee-details>
