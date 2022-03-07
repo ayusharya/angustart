@@ -12,6 +12,12 @@ Name: <input [(ngModel)]="title" type="text"  placeholder=" Enter name" >
 
 <div app-test (childEvent)="message=$event" [parentData]="name1"></div> <!-- <div class="app-test"></div>, <app-test></app-test> -->
 {{message}}
-<app-employee-list></app-employee-list>
+<!-- <app-employee-list></app-employee-list>
 
-<app-employee-details></app-employee-details>
+<app-employee-details></app-employee-details> -->
+<nav>
+<a routerLink="employeelist" routerLinkActive="active"> employeelist</a>
+<a routerLink="employeedetails"> employeedetails</a>
+
+</nav>
+<router-outlet></router-outlet>
